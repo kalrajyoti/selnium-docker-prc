@@ -11,4 +11,4 @@ ADD target/docker-resources     ./
 ADD runner.sh                   runner.sh
 
 # Start the runner.sh
-ENTRYPOINT  java -cp 'libs/*' org.testng.TestNG test-suites/vendor-portal.xml -threadcount 4
+ENTRYPOINT  java -Dselenium.grid.enabled=true -Dselenium.grid.hubHost= 192.168.1.6 -cp 'libs/*' org.testng.TestNG test-suites/flight-reservation.xml
